@@ -5,7 +5,7 @@ template <class T> vector<int> zAlgo(T S) {
 		if (i + A[i - j] < j + A[j]) {
 			A[i] = A[i - j];
 		} else {
-			A[i] = max(0, j + A[j] - i);
+			A[i] = max(j + A[j] - i, 0);
 			while (i + A[i] < N && S[A[i]] == S[i + A[i]]) ++A[i];
 			j = i;
 		}
