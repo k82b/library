@@ -12,7 +12,7 @@ class BinaryIndexedTree {
 		}
 		
 	public:
-		BinaryIndexedTree() : N(0) {};
+		BinaryIndexedTree() : BinaryIndexedTree(0) {};
 		explicit BinaryIndexedTree(int N) : N(N), data(N + 1) {}
 		void add(int p, T x) {
 			for (++p; p <= N; p += p & -p) {
