@@ -5,7 +5,7 @@ class UnionFind {
 
 	public:
 		UnionFind() : UnionFind(0) {}
-		UnionFind(int N) : N(N), par(N, -1) {}
+		explicit UnionFind(int N) : N(N), par(N, -1) {}
 		int root(int u) {
 			return (par[u] < 0) ? u : (par[u] = root(par[u]));
 		}
