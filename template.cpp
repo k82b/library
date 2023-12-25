@@ -36,8 +36,7 @@
 #include <utility>
 #include <vector>
 using namespace std;
-using Int = long long;
-using Real = long double;
+using Int = long long; using Real = long double;
 template <class T> inline bool chmin(T& A, T B) { if (A > B) { A = B; return true; } else { return false; } }
 template <class T> inline bool chmax(T& A, T B) { if (A < B) { A = B; return true; } else { return false; } }
 
