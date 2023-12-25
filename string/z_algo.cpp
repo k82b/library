@@ -1,4 +1,5 @@
-template <class T> vector<int> zAlgo(T& S) {
+template <class T>
+vector<int> zAlgo(T& S) {
 	int N = (int) size(S);
 	vector<int> A(N);
 	for (int i = 1, j = 0; i < N; ++i) {
