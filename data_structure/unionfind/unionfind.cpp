@@ -2,7 +2,6 @@ class UnionFind {
 	private:
 		int N;
 		vector<int> par;
-
 	public:
 		UnionFind() : UnionFind(0) {}
 		UnionFind(int N) : N(N), par(N, -1) {}
