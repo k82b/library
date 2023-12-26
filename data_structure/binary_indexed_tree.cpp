@@ -6,7 +6,7 @@ class BinaryIndexedTree {
 		T sum(int k) {
 			int ret = 0;
 			for (; k > 0; k -= k & -k) {
-				ret += data[k - 1];
+				ret += data[k];
 			}
 			return ret;
 		}
@@ -16,7 +16,7 @@ class BinaryIndexedTree {
 		explicit BinaryIndexedTree(int N) : N(N), data(N + 1) {}
 		void add(int p, T x) {
 			for (++p; p <= N; p += p & -p) {
-				data[p - 1] += x;
+				data[p] += x;
 			}
 		}
 		T sum(int l, int r) {
