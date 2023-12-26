@@ -14,9 +14,9 @@ class BinaryIndexedTree {
 	public:
 		BinaryIndexedTree() : BinaryIndexedTree(0) {};
 		explicit BinaryIndexedTree(int N) : N(N), data(N + 1) {}
-		void add(int p, T x) {
-			for (++p; p <= N; p += p & -p) {
-				data[p] += x;
+		void add(int k, T x) {
+			for (++k; k <= N; k += k & -k) {
+				data[k] += x;
 			}
 		}
 		T sum(int l, int r) {
