@@ -4,7 +4,7 @@ class BinaryIndexedTree {
 		int N;
 		vector<T> data;
 		T sum(int k) {
-			int ret = 0;
+			T ret = 0;
 			for (; k > 0; k -= k & -k) {
 				ret += data[k];
 			}
