@@ -41,6 +41,5 @@ template <class T> inline bool chmin(T& A, T B) { if (A > B) { A = B; return tru
 template <class T> inline bool chmax(T& A, T B) { if (A < B) { A = B; return true; } else { return false; } }
 
 int main() {
-	ios::sync_with_stdio(false);
-	cin.tie(nullptr);
+	return 0;
 }
