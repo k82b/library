@@ -19,9 +19,9 @@ template <class T> struct SegmentTree {
 	inline void pull(int i) {
 		node[i].pull(node[i << 1], node[i << 1 | 1]);
 	}
-	template <class S> void change(int p, const S &x) {
-		node[p += N] = T(x);
-		for (; p >>= 1; pull(p));
+	template <class S> void change(int i, const S &x) {
+		node[i += N] = T(x);
+		for (; i >>= 1; pull(i));
 	}
 	T get(int l, int r) {
 		if (l == r) return T();
