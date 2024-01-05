@@ -1,25 +1,21 @@
-template <class T>
-class BinaryIndexedTree {
-	private:
-		int N;
-		vector<T> data;
-		T sum(int k) {
-			T ret = 0;
-			for (; k > 0; k -= k & -k) {
-				ret += data[k];
-			}
-			return ret;
+template <class T> struct BinaryIndexedTree {
+	int N;
+	vector<T> data;
+	BinaryIndexedTree() : BinaryIndexedTree(0) {};
+	explicit BinaryIndexedTree(int N) : N(N), data(N + 1) {}
+	T sum(int k) {
+		T ret = 0;
+		for (; k > 0; k -= k & -k) {
+			ret += data[k];
 		}
-		
-	public:
-		BinaryIndexedTree() : BinaryIndexedTree(0) {};
-		explicit BinaryIndexedTree(int N) : N(N), data(N + 1) {}
-		void add(int k, T x) {
-			for (++k; k <= N; k += k & -k) {
-				data[k] += x;
-			}
+		return ret;
+	}
+	void add(int k, T x) {
+		for (++k; k <= N; k += k & -k) {
+			data[k] += x;
 		}
-		T sum(int l, int r) {
-			return sum(r) - sum(l);
-		}
+	}
+	T sum(int l, int r) {
+		return sum(r) - sum(l);
+	}
 };
