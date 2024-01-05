@@ -11,7 +11,7 @@ template <class T> struct SegmentTree {
 		for (N = 1; N < N_; N <<= 1);
 		node.resize(N << 1);
 		for (int i = 0; i < N_; ++i) node[N + i] = T(v[i]);
-		for (int i = N; i--; ) pull(i);
+		for (int i = N; i--; pull(i));
 	}
 	T &operator[](int i) {
 		return node[N + i];
