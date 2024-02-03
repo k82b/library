@@ -42,9 +42,6 @@ using namespace std;
 using Int = long long;
 using Real = long double;
 
-mt19937_64 rngS(chrono::steady_clock::now().time_since_epoch().count());
-Int randM(Int x) { return rngS() % x; }
-
 template <class T> inline bool chmin(T& A, T B) { if (A > B) { A = B; return true; } else { return false; } }
 template <class T> inline bool chmax(T& A, T B) { if (A < B) { A = B; return true; } else { return false; } }
 
