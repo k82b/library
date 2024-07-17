@@ -2,11 +2,11 @@ template <class T> struct SegmentTree {
 	int N;
 	vector<T> node;
 	SegmentTree() : N(0) {}
-	explicit SegmentTree(int N_) {
+	SegmentTree(int N_) {
 		for (N = 1; N < N_; N <<= 1);
 		node.resize(N << 1);
 	}
-	template <class S> explicit SegmentTree(const vector<S> &v) {
+	template <class S> SegmentTree(const vector<S> &v) {
 		int N_ = (int) size(v);
 		for (N = 1; N < N_; N <<= 1);
 		node.resize(N << 1);
